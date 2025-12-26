@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LittleBigStudio | 2인 개발 팀</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@100..900&display=swap');
+        
+        body {
+            font-family: 'Pretendard', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #fafafa;
+            color: #1a1a1a;
+        }
+
+        .section-padding {
+            padding: 80px 20px;
+        }
+
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        /* 미니멀한 애니메이션 */
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        [data-i18n] {
+            transition: opacity 0.2s ease;
+        }
+
+        .coming-soon-badge {
+            font-size: 10px;
+            padding: 2px 6px;
+            background-color: #fef3c7;
+            color: #d97706;
+            border-radius: 4px;
+            font-weight: 700;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <nav class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-4xl mx-auto px-6 h-16 flex justify-between items-center">
+            <a href="#" class="font-bold text-lg tracking-tight">LittleBigStudio</a>
+            <div class="flex items-center gap-6">
+                <div class="hidden sm:flex gap-6 text-sm font-medium text-gray-500">
+                    <a href="#about" class="hover:text-black transition-colors" data-i18n="nav-about">소개</a>
+                    <a href="#work" class="hover:text-black transition-colors" data-i18n="nav-work">작업물</a>
+                    <a href="#contact" class="hover:text-black transition-colors" data-i18n="nav-contact">문의</a>
+                </div>
+                <!-- Language Toggle -->
+                <button id="lang-toggle" class="flex items-center gap-1 text-xs font-bold border border-gray-200 px-2 py-1 rounded-md hover:bg-gray-50 transition-colors">
+                    <i data-lucide="languages" class="w-3 h-3"></i>
+                    <span id="lang-text">EN</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="about" class="pt-48 pb-32 px-6 max-w-5xl mx-auto">
+        <div class="fade-in text-center sm:text-left">
+            <span class="inline-block px-3 py-1 bg-gray-100 text-gray-600 text-xs font-semibold rounded-full mb-8" data-i18n="hero-tag">Two-person Creative Team</span>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black leading-tight mb-10 tracking-tighter">
+                <span data-i18n="hero-title-1">작은 아이디어로 시작해</span><br/>
+                <span class="text-blue-600" data-i18n="hero-title-2">큰 가치</span><span data-i18n="hero-title-3">를 만듭니다.</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-400 leading-relaxed max-w-3xl font-medium" data-i18n="hero-desc">
+                안녕하세요, 개발자 한 명과 디자이너 한 명이 모인 2인 팀 LittleBigStudio입니다. 우리는 안드로이드 앱의 본질에 집중하며, 사용자가 매일 열어보고 싶은 간결하고 유용한 경험을 설계합니다.
+            </p>
+        </div>
+    </section>
+
+    <!-- Expertise -->
+    <section class="bg-white border-y border-gray-100 section-padding">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-10" data-i18n="focus-label">Our Synergy</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                        <i data-lucide="code-2" class="w-5 h-5 text-blue-500"></i>
+                        <span data-i18n="focus-1-title">안드로이드 전문 개발</span>
+                    </h3>
+                    <p class="text-gray-500 leading-relaxed text-sm" data-i18n="focus-1-desc">
+                        Android OS에 최적화된 고성능 앱을 구축합니다. 최신 라이브러리와 아키텍처를 활용하여 빠르고 안정적인 기능을 구현하는 것에 자부심을 느낍니다.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                        <i data-lucide="palette" class="w-5 h-5 text-pink-500"></i>
+                        <span data-i18n="focus-2-title">사용자 중심 디자인</span>
+                    </h3>
+                    <p class="text-gray-500 leading-relaxed text-sm" data-i18n="focus-2-desc">
+                        단순히 예쁜 디자인을 넘어, 안드로이드 생태계에 익숙한 직관적인 UX를 설계합니다. 디자이너가 직접 참여하여 앱의 완성도를 높입니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work -->
+    <section id="work" class="section-padding">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="flex justify-between items-end mb-12">
+                <h2 class="text-3xl font-bold italic underline decoration-blue-200 underline-offset-8" data-i18n="work-label">Recent Works</h2>
+            </div>
+            
+            <div class="grid gap-6">
+                <!-- Project 1: 모두의정산 -->
+                <div class="project-card bg-white border border-gray-100 p-8 rounded-3xl flex flex-col md:flex-row gap-8 items-center">
+                    <div class="w-20 h-20 bg-blue-50 rounded-2xl flex items-center justify-center shrink-0">
+                        <i data-lucide="calculator" class="w-10 h-10 text-blue-500"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2" data-i18n="work-1-title">모두의정산</h4>
+                        <p class="text-gray-500 text-sm mb-4" data-i18n="work-1-desc">모임 비용을 간편하게 계산하고 공유하는 정산 도구</p>
+                        <div class="flex gap-2">
+                            <span class="text-[10px] px-2 py-1 bg-gray-100 text-gray-500 rounded text-uppercase">Kotlin</span>
+                            <span class="text-[10px] px-2 py-1 bg-gray-100 text-gray-500 rounded text-uppercase">Android</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: TapTapBlitz -->
+                <div class="project-card bg-white border border-gray-100 p-8 rounded-3xl flex flex-col md:flex-row gap-8 items-center">
+                    <div class="w-20 h-20 bg-emerald-50 rounded-2xl flex items-center justify-center shrink-0">
+                        <i data-lucide="zap" class="w-10 h-10 text-emerald-500"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">
+                            <span data-i18n="work-2-title">TapTapBlitz</span>
+                            <span class="coming-soon-badge" data-i18n="coming-soon">출시예정</span>
+                        </h4>
+                        <p class="text-gray-500 text-sm mb-4" data-i18n="work-2-desc">빠른 반사신경이 필요한 중독성 있는 탭 액션 게임</p>
+                        <div class="flex gap-2">
+                            <span class="text-[10px] px-2 py-1 bg-gray-100 text-gray-500 rounded text-uppercase">Game</span>
+                            <span class="text-[10px] px-2 py-1 bg-gray-100 text-gray-500 rounded text-uppercase">Jetpack Compose</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: 암기력훈련 -->
+                <div class="project-card bg-white border border-gray-100 p-8 rounded-3xl flex flex-col md:flex-row gap-8 items-center">
+                    <div class="w-20 h-20 bg-purple-50 rounded-2xl flex items-center justify-center shrink-0">
+                        <i data-lucide="brain-circuit" class="w-10 h-10 text-purple-500"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">
+                            <span data-i18n="work-3-title">암기력훈련</span>
+                            <span class="coming-soon-badge" data-i18n="coming-soon">출시예정</span>
+                        </h4>
+                        <p class="text-gray-500 text-sm mb-4" data-i18n="work-3-desc">두뇌 트레이닝을 위한 미니멀한 기억력 강화 도구</p>
+                        <div class="flex gap-2">
+                            <span class="text-[10px] px-2 py-1 bg-gray-100 text-gray-500 rounded text-uppercase">Utility</span>
+                            <span class="text-[10px] px-2 py-1 bg-gray-100 text-gray-500 rounded text-uppercase">Material 3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section-padding bg-black text-white rounded-t-[3rem]">
+        <div class="max-w-4xl mx-auto px-6 py-12 text-center">
+            <h2 class="text-3xl font-bold mb-6" data-i18n="contact-title">이야기 나누고 싶으신가요?</h2>
+            <p class="text-gray-400 mb-10" data-i18n="contact-desc">
+                새로운 프로젝트 제안이나 가벼운 인사도 환영합니다.<br/>
+                팀으로 함께 고민하며 최고의 결과를 만들어 드릴게요.
+            </p>
+            <a href="mailto:blksnowman@gmail.com" class="inline-flex items-center gap-3 text-2xl md:text-3xl font-medium border-b-2 border-white pb-2 hover:text-blue-400 hover:border-blue-400 transition-all">
+                blksnowman@gmail.com
+                <i data-lucide="arrow-up-right" class="w-6 h-6"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-gray-900">
+        <div class="max-w-4xl mx-auto px-6 text-center text-xs text-gray-600" data-i18n="footer-copy">
+            &copy; 2025 LittleBigStudio. Built by 1 Dev & 1 Designer.
+        </div>
+    </footer>
+
+    <script>
+        // 번역 데이터
+        const translations = {
+            ko: {
+                'nav-about': '소개',
+                'nav-work': '작업물',
+                'nav-contact': '문의',
+                'hero-tag': 'Two-person Creative Team',
+                'hero-title-1': '작은 아이디어로 시작해',
+                'hero-title-2': '큰 가치',
+                'hero-title-3': '를 만듭니다.',
+                'hero-desc': '안녕하세요, 개발자 한 명과 디자이너 한 명이 모인 2인 팀 LittleBigStudio입니다. 우리는 안드로이드 앱의 본질에 집중하며, 사용자가 매일 열어보고 싶은 간결하고 유용한 경험을 설계합니다.',
+                'focus-label': 'Our Synergy',
+                'focus-1-title': '안드로이드 전문 개발',
+                'focus-1-desc': 'Android OS에 최적화된 고성능 앱을 구축합니다. 최신 라이브러리와 아키텍처를 활용하여 빠르고 안정적인 기능을 구현하는 것에 자부심을 느낍니다.',
+                'focus-2-title': '사용자 중심 디자인',
+                'focus-2-desc': '단순히 예쁜 디자인을 넘어, 안드로이드 생태계에 익숙한 직관적인 UX를 설계합니다. 디자이너가 직접 참여하여 앱의 완성도를 높입니다.',
+                'work-label': 'Recent Works',
+                'work-1-title': '모두의정산',
+                'work-1-desc': '모임 비용을 간편하게 계산하고 공유하는 정산 도구',
+                'work-2-title': 'TapTapBlitz',
+                'work-2-desc': '빠른 반사신경이 필요한 중독성 있는 탭 액션 게임',
+                'work-3-title': '암기력훈련',
+                'work-3-desc': '두뇌 트레이닝을 위한 미니멀한 기억력 강화 도구',
+                'coming-soon': '출시예정',
+                'contact-title': '이야기 나누고 싶으신가요?',
+                'contact-desc': '새로운 프로젝트 제안이나 가벼운 인사도 환영합니다. 팀으로 함께 고민하며 최고의 결과를 만들어 드릴게요.',
+                'footer-copy': '© 2025 LittleBigStudio. Built by 1 Dev & 1 Designer.'
+            },
+            en: {
+                'nav-about': 'About',
+                'nav-work': 'Work',
+                'nav-contact': 'Contact',
+                'hero-tag': 'Two-person Creative Team',
+                'hero-title-1': 'Starting with small ideas,',
+                'hero-title-2': 'Creating great value',
+                'hero-title-3': '.',
+                'hero-desc': "Hi, we are LittleBigStudio, a team of one developer and one designer. We focus on the essence of Android apps, designing simple and useful experiences that users want to open every day.",
+                'focus-label': 'Our Synergy',
+                'focus-1-title': 'Expert Android Development',
+                'focus-1-desc': 'Building high-performance apps optimized for Android OS. We take pride in implementing fast and stable features using the latest libraries and architectures.',
+                'focus-2-title': 'User-Centered Design',
+                'focus-2-desc': "Beyond just looking good, we design intuitive UX familiar to the Android ecosystem. A dedicated designer ensures every detail of the app's quality.",
+                'work-label': 'Recent Works',
+                'work-1-title': "Everyone's Split",
+                'work-1-desc': 'A simple tool for calculating and sharing group expenses',
+                'work-2-title': 'TapTapBlitz',
+                'work-2-desc': 'An addictive tap action game requiring fast reflexes',
+                'work-3-title': 'Memory Training',
+                'work-3-desc': 'A minimal memory enhancement tool for brain training',
+                'coming-soon': 'Coming Soon',
+                'contact-title': 'Want to work together?',
+                'contact-desc': 'New project proposals or simple hellos are always welcome. We will work together as a team to deliver the best results.',
+                'footer-copy': '© 2025 LittleBigStudio. Built by 1 Dev & 1 Designer.'
+            }
+        };
+
+        let currentLang = 'ko';
+        const langToggle = document.getElementById('lang-toggle');
+        const langText = document.getElementById('lang-text');
+
+        function updateLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+            langText.textContent = lang === 'ko' ? 'EN' : 'KR';
+            currentLang = lang;
+        }
+
+        langToggle.addEventListener('click', () => {
+            const nextLang = currentLang === 'ko' ? 'en' : 'ko';
+            updateLanguage(nextLang);
+        });
+
+        // Lucide 아이콘 초기화
+        lucide.createIcons();
+    </script>
+</body>
+</html>
