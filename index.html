@@ -15,6 +15,9 @@
             scroll-behavior: smooth;
             background-color: #fafafa;
             color: #1a1a1a;
+            /* 한글 단어 중간에 줄바꿈 되지 않도록 설정 */
+            word-break: keep-all; 
+            overflow-wrap: break-word;
         }
 
         .section-padding {
@@ -81,7 +84,8 @@
     <section id="about" class="pt-48 pb-32 px-6 max-w-5xl mx-auto">
         <div class="fade-in text-center sm:text-left">
             <span class="inline-block px-3 py-1 bg-gray-100 text-gray-600 text-xs font-semibold rounded-full mb-8" data-i18n="hero-tag">Two-person Creative Team</span>
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black leading-tight mb-10 tracking-tighter">
+            <!-- 폰트 크기 조정: text-5xl -> text-4xl (모바일), sm:text-6xl (태블릿), md:text-7xl (PC) -->
+            <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-tight mb-10 tracking-tighter">
                 <span data-i18n="hero-title-1">작은 아이디어로 시작해</span><br/>
                 <span class="text-blue-600" data-i18n="hero-title-2">큰 가치</span><span data-i18n="hero-title-3">를 만듭니다.</span>
             </h1>
@@ -127,10 +131,8 @@
             
             <div class="grid gap-6">
                 <!-- Project 1: 모두의정산 -->
-                <div class="project-card bg-white border border-gray-100 p-8 rounded-3xl flex flex-col md:flex-row gap-8 items-center">
-                    <div class="w-20 h-20 bg-blue-50 rounded-2xl flex items-center justify-center shrink-0">
-                        <i data-lucide="calculator" class="w-10 h-10 text-blue-500"></i>
-                    </div>
+                <a href="https://play.google.com/store/apps/details?id=com.littlebigstudio.moducal" target="_blank" rel="noopener noreferrer" class="project-card bg-white border border-gray-100 p-8 rounded-3xl flex flex-col md:flex-row gap-8 items-center block hover:no-underline">
+                    <img src="https://play-lh.googleusercontent.com/8dX_wi0FDgQLCrIy35WKJnobiY1avg15vT4eEK6srE3vOEz_5nxv0rJrfDsG5CGAlea8uhu8J0RiHP8juCwF2A=s64-rw" class="w-20 h-20 rounded-2xl shadow-sm shrink-0" alt="모두의정산 Icon">
                     <div>
                         <h4 class="text-xl font-bold mb-2" data-i18n="work-1-title">모두의정산</h4>
                         <p class="text-gray-500 text-sm mb-4" data-i18n="work-1-desc">모임 비용을 간편하게 계산하고 공유하는 정산 도구</p>
@@ -139,17 +141,14 @@
                             <span class="text-[10px] px-2 py-1 bg-gray-100 text-gray-500 rounded text-uppercase">Android</span>
                         </div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Project 2: TapTapBlitz -->
-                <div class="project-card bg-white border border-gray-100 p-8 rounded-3xl flex flex-col md:flex-row gap-8 items-center">
-                    <div class="w-20 h-20 bg-emerald-50 rounded-2xl flex items-center justify-center shrink-0">
-                        <i data-lucide="zap" class="w-10 h-10 text-emerald-500"></i>
-                    </div>
+                <a href="https://play.google.com/store/apps/details?id=com.littlebigstudio.taptapblitz&hl=ko" target="_blank" rel="noopener noreferrer" class="project-card bg-white border border-gray-100 p-8 rounded-3xl flex flex-col md:flex-row gap-8 items-center block hover:no-underline">
+                    <img src="https://play-lh.googleusercontent.com/9ncY_bkAIEKa_9nOwpr-Gp3I3v-InVy3RYuvXl_nQfimFTZ70cEfbTdqhuyXf3QTG3AN5e9KNEfP_tqSJCdt1eM=s64-rw" class="w-20 h-20 rounded-2xl shadow-sm shrink-0" alt="TapTapBlitz Icon">
                     <div>
                         <h4 class="text-xl font-bold mb-2">
                             <span data-i18n="work-2-title">TapTapBlitz</span>
-                            <span class="coming-soon-badge" data-i18n="coming-soon">출시예정</span>
                         </h4>
                         <p class="text-gray-500 text-sm mb-4" data-i18n="work-2-desc">빠른 반사신경이 필요한 중독성 있는 탭 액션 게임</p>
                         <div class="flex gap-2">
@@ -157,17 +156,14 @@
                             <span class="text-[10px] px-2 py-1 bg-gray-100 text-gray-500 rounded text-uppercase">Jetpack Compose</span>
                         </div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Project 3: 암기력훈련 -->
-                <div class="project-card bg-white border border-gray-100 p-8 rounded-3xl flex flex-col md:flex-row gap-8 items-center">
-                    <div class="w-20 h-20 bg-purple-50 rounded-2xl flex items-center justify-center shrink-0">
-                        <i data-lucide="brain-circuit" class="w-10 h-10 text-purple-500"></i>
-                    </div>
+                <a href="https://play.google.com/store/apps/details?id=com.littlebigstudio.memorysequence" target="_blank" rel="noopener noreferrer" class="project-card bg-white border border-gray-100 p-8 rounded-3xl flex flex-col md:flex-row gap-8 items-center block hover:no-underline">
+                    <img src="https://play-lh.googleusercontent.com/Pbov6zzEyDUNSW3h9fV49mdWmZqfbvM0fLoPSqc3iHBMc7u-YoRONv25UCTcyP0N1K73zSBneQSxdA1cWjctF5c=s64-rw" class="w-20 h-20 rounded-2xl shadow-sm shrink-0" alt="암기력훈련 Icon">
                     <div>
                         <h4 class="text-xl font-bold mb-2">
                             <span data-i18n="work-3-title">암기력훈련</span>
-                            <span class="coming-soon-badge" data-i18n="coming-soon">출시예정</span>
                         </h4>
                         <p class="text-gray-500 text-sm mb-4" data-i18n="work-3-desc">두뇌 트레이닝을 위한 미니멀한 기억력 강화 도구</p>
                         <div class="flex gap-2">
@@ -175,7 +171,7 @@
                             <span class="text-[10px] px-2 py-1 bg-gray-100 text-gray-500 rounded text-uppercase">Material 3</span>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
